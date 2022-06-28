@@ -1,0 +1,1694 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local colors = {
+    SchemeColor = Color3.fromRGB(102, 0, 0),
+    Background = Color3.fromRGB(10, 10, 10),
+    Header = Color3.fromRGB(5, 5, 5),
+    TextColor = Color3.fromRGB(255,255,255),
+    ElementColor = Color3.fromRGB(20, 20, 20)
+}
+local Window = Library.CreateLib("UwU Scripts", colors)
+local Version = "0.0.2"
+local EpicPlayerMan = game.Players.LocalPlayer.Character.HumanoidRootPart
+local humanoid = game.Players.LocalPlayer.Character.Humanoid
+
+local HomeTab = Window:NewTab("Info")
+local InfoSection = HomeTab:NewSection("Info")
+local CreditsSection = HomeTab:NewSection("Credits")
+
+InfoSection:NewLabel("Welcome, " .. game.Players.LocalPlayer.Name .. " to UwU Scripts.")
+InfoSection:NewLabel("The Script version is " .. Version .. ".")
+InfoSection:NewLabel("Our Site: Unavailable")
+
+CreditsSection:NewLabel("Creator: UwU Scripts")
+CreditsSection:NewLabel("Hub UI: Kavo UI")
+
+local UniversalTab = Window:NewTab("Universal")
+local UniversalSection1 = UniversalTab:NewSection("Character")
+
+UniversalSection1:NewSlider("Speed", "Changes your walkspeed", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+UniversalSection1:NewSlider("Jump Power", "Changes your jump power", 500, 50, function(jp) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = jp
+end)
+
+UniversalSection1:NewToggle("Toggle Jump Power", "Toggles your jump power", function(state)
+if state then
+    game.Players.LocalPlayer.Character.Humanoid.UseJumpPower = true
+else
+    game.Players.LocalPlayer.Character.Humanoid.UseJumpPower = false
+end
+end)
+
+UniversalSection1:NewButton("Inf Jumps", "Enables Inf Jumps", function()
+    local InfiniteJumpEnabled = true
+game:GetService("UserInputService").JumpRequest:connect(function()
+	if InfiniteJumpEnabled then
+		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+	end
+end)
+end)
+
+UniversalSection1:NewSlider("Fov", "Changes player's fov", 120, 60, function(v) -- 500 (MaxValue) | 0 (MinValue)
+    game.Workspace.CurrentCamera.FieldOfView = v
+end)
+
+
+
+
+
+-- Example Ui
+    if game.PlaceId == 8750997647 then
+    InfoSection:NewLabel("You are playing Tapping Legends X.")
+
+
+-- Tab 1 (Clicks)
+local FarmTab = Window:NewTab("Autofarm")
+local FarmSection = FarmTab:NewSection("Autofarm")
+
+FarmSection:NewToggle("Auto Tap", "Taps for you", function(state)
+getgenv().autoTap = true;
+if state then
+    aTap()
+else
+    getgenv().autoTap = false;
+end
+end)
+
+
+
+
+
+
+
+-- Tab 2 (Rebirths)
+
+local RebirthTab = Window:NewTab("Rebirth")
+local RebirthSection = RebirthTab:NewSection("Rebirth")
+
+RebirthSection:NewToggle("Rebirth 1", "Rebirths for you by 1", function(state)
+getgenv().aRebirth1 = true;
+if state then
+    aRebirth1()
+else
+    getgenv().aRebirth1 = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 5", "Rebirths for you by 5", function(state)
+getgenv().aRebirth5 = true;
+if state then
+    aRebirth5()
+else
+    getgenv().aRebirth5 = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 20", "Rebirths for you by 20", function(state)
+getgenv().aRebirth20 = true;
+if state then
+    aRebirth20()
+else
+    getgenv().aRebirth20 = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 80", "Rebirths for you by 80", function(state)
+getgenv().aRebirth80 = true;
+if state then
+    aRebirth80()
+else
+    getgenv().aRebirth80 = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 400", "Rebirths for you by 400", function(state)
+getgenv().aRebirth400 = true;
+if state then
+    aRebirth400()
+else
+    getgenv().aRebirth400 = false;
+end
+end)
+
+RebirthSection:NewToggle("Rebirth 2k", "Rebirths for you by 2k", function(state)
+getgenv().aRebirth2k = true;
+if state then
+    aRebirth2k()
+else
+    getgenv().aRebirth2k = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 10k", "Rebirths for you by 10k", function(state)
+getgenv().aRebirth10k = true;
+if state then
+    aRebirth10k()
+else
+    getgenv().aRebirth10k = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 40k", "Rebirths for you by 40k", function(state)
+getgenv().aRebirth40k = true;
+if state then
+    aRebirth40k()
+else
+    getgenv().aRebirth40k = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 100k", "Rebirths for you by 100k", function(state)
+getgenv().aRebirth100k = true;
+if state then
+    aRebirth100k()
+else
+    getgenv().aRebirth100k = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 400k", "Rebirths for you by 400k", function(state)
+getgenv().aRebirth400k = true;
+if state then
+    aRebirth400k()
+else
+    getgenv().aRebirth400k = false;
+end
+end)
+
+RebirthSection:NewToggle("Rebirth 2M", "Rebirths for you by 2M", function(state)
+getgenv().aRebirth2M = true;
+if state then
+    aRebirth2M()
+else
+    getgenv().aRebirth2M = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 10M", "Rebirths for you by 10M", function(state)
+getgenv().aRebirth10M = true;
+if state then
+    aRebirth10M()
+else
+    getgenv().aRebirth10M = false;
+end
+end)
+
+RebirthSection:NewToggle("Rebirth 40M", "Rebirths for you by 40M", function(state)
+getgenv().aRebirth40M = true;
+if state then
+    aRebirth40M()
+else
+    getgenv().aRebirth40M = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 100M", "Rebirths for you by 100M", function(state)
+getgenv().aRebirth100M = true;
+if state then
+    aRebirth100M()
+else
+    getgenv().aRebirth100M = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 500M", "Rebirths for you by 500M", function(state)
+getgenv().aRebirth500M = true;
+if state then
+    aRebirth500M()
+else
+    getgenv().aRebirth500M = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 2B", "Rebirths for you by 2B", function(state)
+getgenv().aRebirth2B = true;
+if state then
+    aRebirth2B()
+else
+    getgenv().aRebirth2B = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 10B", "Rebirths for you by 10B", function(state)
+getgenv().aRebirth10B = true;
+if state then
+    aRebirth10B()
+else
+    getgenv().aRebirth10B = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 40B", "Rebirths for you by 40B", function(state)
+getgenv().aRebirth40B = true;
+if state then
+    aRebirth40B()
+else
+    getgenv().aRebirth40B = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 200B", "Rebirths for you by 200B", function(state)
+getgenv().aRebirth200B = true;
+if state then
+    aRebirth200B()
+else
+    getgenv().aRebirth200B = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 1T", "Rebirths for you by 1T", function(state)
+getgenv().aRebirth1T = true;
+if state then
+    aRebirth1T()
+else
+    getgenv().aRebirth1T = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 2T", "Rebirths for you by 2T", function(state)
+getgenv().aRebirth2T = true;
+if state then
+    aRebirth2T()
+else
+    getgenv().aRebirth2T = false;
+end
+end)
+
+RebirthSection:NewToggle("Rebirth 10T", "Rebirths for you by 10T", function(state)
+getgenv().aRebirth10T = true;
+if state then
+    aRebirth10T()
+else
+    getgenv().aRebirth10T = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 40T", "Rebirths for you by 40T", function(state)
+getgenv().aRebirth40T = true;
+if state then
+    aRebirth40T()
+else
+    getgenv().aRebirth40T = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 100T", "Rebirths for you by 100T", function(state)
+getgenv().aRebirth100T = true;
+if state then
+    aRebirth100T()
+else
+    getgenv().aRebirth100T = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 500T", "Rebirths for you by 500T", function(state)
+getgenv().aRebirth500T = true;
+if state then
+    aRebirth500T()
+else
+    getgenv().aRebirth500T = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 2Qd", "Rebirths for you by 2Qd", function(state)
+getgenv().aRebirth2Qd = true;
+if state then
+    aRebirth2Qd()
+else
+    getgenv().aRebirth2Qd = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 10Qd", "Rebirths for you by 10Qd", function(state)
+getgenv().aRebirth10Qd = true;
+if state then
+    aRebirth10Qd()
+else
+    getgenv().aRebirth10Qd = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 100Qd", "Rebirths for you by 100Qd", function(state)
+getgenv().aRebirth100Qd = true;
+if state then
+    aRebirth100Qd()
+else
+    getgenv().aRebirth100Qd = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 500Qd", "Rebirths for you by 500Qd", function(state)
+getgenv().aRebirth500Qd = true;
+if state then
+    aRebirth500Qd()
+else
+    getgenv().aRebirth500Qd = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 2Qn", "Rebirths for you by 2Qn", function(state)
+getgenv().aRebirth2Qn = true;
+if state then
+    aRebirth2Qn()
+else
+    getgenv().aRebirth2Qn = false;
+end
+end)
+
+RebirthSection:NewToggle("Rebirth 10Qn", "Rebirths for you by 10Qn", function(state)
+getgenv().aRebirth10Qn = true;
+if state then
+    aRebirth10Qn()
+else
+    getgenv().aRebirth10Qn = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 40Qn", "Rebirths for you by 40Qn", function(state)
+getgenv().aRebirth40Qn = true;
+if state then
+    aRebirth40Qn()
+else
+    getgenv().aRebirth40Qn = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 200Qn", "Rebirths for you by 200Qn", function(state)
+getgenv().aRebirth200Qn = true;
+if state then
+    aRebirth200Qn()
+else
+    getgenv().aRebirth200Qn = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 1Sx", "Rebirths for you by 1Sx", function(state)
+getgenv().aRebirth1Sx = true;
+if state then
+    aRebirth1Sx()
+else
+    getgenv().aRebirth1Sx = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 5Sx", "Rebirths for you by 5Sx", function(state)
+getgenv().aRebirth5Sx = true;
+if state then
+    aRebirth5Sx()
+else
+    getgenv().aRebirth5Sx = false;
+end
+end)
+
+
+
+
+
+
+
+-- Tab 3 (Eggs)
+
+local EggsTab = Window:NewTab("Auto Eggs")
+local EggsSection = EggsTab:NewSection("Eggs")
+
+EggsSection:NewToggle("Auto Basic Egg", "Auto opens the Basic egg for you", function(state)
+getgenv().aBasicEgg = true;
+if state then
+    local BasicEggLocation = CFrame.new(-55, 157, -796)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = BasicEggLocation
+    aBasicEgg()
+else
+    getgenv().aBasicEgg = false;
+end
+end)
+
+EggsSection:NewToggle("Auto Basic Egg x3", "Auto opens the Basic egg x3 for you", function(state)
+getgenv().aBasicEgg3 = true;
+if state then
+    local BasicEggLocation = CFrame.new(-55, 157, -796)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = BasicEggLocation
+    aBasicEgg3()
+else
+    getgenv().aBasicEgg3 = false;
+end
+end)
+
+
+
+
+EggsSection:NewToggle("Auto Rare Egg", "Auto opens the Rare egg for you", function(state)
+getgenv().aRareEgg = true;
+if state then
+    local RareEggLocation = CFrame.new(-63, 157, -833)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = RareEggLocation
+    aRareEgg()
+else
+    getgenv().aRareEgg = false;
+end
+end)
+
+EggsSection:NewToggle("Auto Rare Egg x3", "Auto opens the Rare egg x3 for you", function(state)
+getgenv().aRareEgg3 = true;
+if state then
+    local RareEggLocation = CFrame.new(-63, 157, -833)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = RareEggLocation
+    aRareEgg3()
+else
+    getgenv().aRareEgg3 = false;
+end
+end)
+
+
+
+EggsSection:NewToggle("Auto Forest Egg", "Auto opens the Forest egg for you", function(state)
+getgenv().aForestEgg = true;
+if state then
+    local ForestEggLocation = CFrame.new(-69, 803, -857)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = ForestEggLocation
+    aForestEgg()
+else
+    getgenv().aForestEgg = false;
+end
+end)
+
+EggsSection:NewToggle("Auto Forest Egg x3", "Auto opens the Forest egg x3 for you", function(state)
+getgenv().aForestEgg3 = true;
+if state then
+    local ForestEggLocation = CFrame.new(-69, 803, -857)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = ForestEggLocation
+    aForestEgg3()
+else
+    getgenv().aForestEgg3 = false;
+end
+end)
+
+
+
+EggsSection:NewToggle("Auto Desert Egg", "Auto opens the Desert egg for you", function(state)
+getgenv().aDesertEgg = true;
+if state then
+    local DesertEggLocation = CFrame.new(44, 1398, -947)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = DesertEggLocation
+    aDesertEgg()
+else
+    getgenv().aDesertEgg = false;
+end
+end)
+
+EggsSection:NewToggle("Auto Desert Egg x3", "Auto opens the Desert egg x3 for you", function(state)
+getgenv().aDesertEgg3 = true;
+if state then
+    local DesertEggLocation = CFrame.new(44, 1398, -947)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = DesertEggLocation
+    aDesertEgg3()
+else
+    getgenv().aDesertEgg3 = false;
+end
+end)
+
+
+
+EggsSection:NewToggle("Auto Winter Egg", "Auto opens the Winter egg for you", function(state)
+getgenv().aWinterEgg = true;
+if state then
+    local WinterEggLocation = CFrame.new(-80, 2111, -873)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = WinterEggLocation
+    aWinterEgg()
+else
+    getgenv().aWinterEgg = false;
+end
+end)
+
+EggsSection:NewToggle("Auto Winter Egg x3", "Auto opens the Winter egg x3 for you", function(state)
+getgenv().aWinterEgg3 = true;
+if state then
+    local WinterEggLocation = CFrame.new(-80, 2111, -873)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = WinterEggLocation
+    aWinterEgg3()
+else
+    getgenv().aWinterEgg3 = false;
+end
+end)
+
+
+
+EggsSection:NewToggle("Auto Lava Egg", "Auto opens the Lava egg for you", function(state)
+getgenv().aLavaEgg = true;
+if state then
+    local LavaEggLocation = CFrame.new(-27, 2647, -766)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = LavaEggLocation
+    aLavaEgg()
+else
+    getgenv().aLavaEgg = false;
+end
+end)
+
+EggsSection:NewToggle("Auto Lava Egg x3", "Auto opens the Lava egg x3 for you", function(state)
+getgenv().aLavaEgg3 = true;
+if state then
+    local LavaEggLocation = CFrame.new(-27, 2647, -766)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = LavaEggLocation
+    aLavaEgg3()
+else
+    getgenv().aLavaEgg3 = false;
+end
+end)
+
+
+
+EggsSection:NewToggle("Auto Aqua Egg", "Auto opens the Aqua egg for you", function(state)
+getgenv().aAquaEgg = true;
+if state then
+    local AquaEggLocation = CFrame.new(77, 3171, -829)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = AquaEggLocation
+    aAquaEgg()
+else
+    getgenv().aAquaEgg = false;
+end
+end)
+
+EggsSection:NewToggle("Auto Aqua Egg x3", "Auto opens the Aqua egg x3 for you", function(state)
+getgenv().aAquaEgg3 = true;
+if state then
+    local AquaEggLocation = CFrame.new(77, 3171, -829)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = AquaEggLocation
+    aAquaEgg3()
+else
+    getgenv().aAquaEgg3 = false;
+end
+end)
+
+
+
+EggsSection:NewToggle("Auto Sakura Egg", "Auto opens the Sakura egg for you", function(state)
+getgenv().aSakuraEgg = true;
+if state then
+    local SakuraEggLocation = CFrame.new(-17, 3653, -757)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = SakuraEggLocation
+    aSakuraEgg()
+else
+    getgenv().aSakuraEgg = false;
+end
+end)
+
+EggsSection:NewToggle("Auto Sakura Egg x3", "Auto opens the Sakura egg x3 for you", function(state)
+getgenv().aSakuraEgg3 = true;
+if state then
+    local SakuraEggLocation = CFrame.new(-17, 3653, -757)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = SakuraEggLocation
+    aSakuraEgg3()
+else
+    getgenv().aSakuraEgg3 = false;
+end
+end)
+
+
+
+EggsSection:NewToggle("Auto Mine Egg", "Auto opens the Mine egg for you", function(state)
+getgenv().aMineEgg = true;
+if state then
+    local MineEggLocation = CFrame.new(-19, 4105, -771)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = MineEggLocation
+    aMineEgg()
+else
+    getgenv().aMineEgg = false;
+end
+end)
+
+EggsSection:NewToggle("Auto Mine Egg x3", "Auto opens the Mine egg x3 for you", function(state)
+getgenv().aMineEgg3 = true;
+if state then
+    local MineEggLocation = CFrame.new(-19, 4105, -771)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = MineEggLocation
+    aMineEgg3()
+else
+    getgenv().aMineEgg3 = false;
+end
+end)
+
+
+
+EggsSection:NewToggle("Auto Galaxy Egg", "Auto opens the Galaxy egg for you", function(state)
+getgenv().aGalaxyEgg = true;
+if state then
+    local GalaxyEggLocation = CFrame.new(-20, 4543, -805)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = GalaxyEggLocation
+    aGalaxyEgg()
+else
+    getgenv().aGalaxyEgg = false;
+end
+end)
+
+EggsSection:NewToggle("Auto Galaxy Egg x3", "Auto opens the Galaxy egg x3 for you", function(state)
+getgenv().aGalaxyEgg3 = true;
+if state then
+    local GalaxyEggLocation = CFrame.new(-20, 4543, -805)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = GalaxyEggLocation
+    aGalaxyEgg3()
+else
+    getgenv().aGalaxyEgg3 = false;
+end
+end)
+
+
+
+EggsSection:NewToggle("Auto Heaven Egg", "Auto opens the Heaven egg for you", function(state)
+getgenv().aHeavenEgg = true;
+if state then
+    local HeavenEggLocation = CFrame.new(107, 5002, -856)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = HeavenEggLocation
+    aHeavenEgg()
+else
+    getgenv().aHeavenEgg = false;
+end
+end)
+
+EggsSection:NewToggle("Auto Heaven Egg x3", "Auto opens the Heaven egg x3 for you", function(state)
+getgenv().aHeavenEgg3 = true;
+if state then
+    local HeavenEggLocation = CFrame.new(107, 5002, -856)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = HeavenEggLocation
+    aHeavenEgg3()
+else
+    getgenv().aHeavenEgg3 = false;
+end
+end)
+
+
+
+EggsSection:NewToggle("Auto Hell Egg", "Auto opens the Hell egg for you", function(state)
+getgenv().aHellEgg = true;
+if state then
+    local HellEggLocation = CFrame.new(83, 5471, -854)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = HellEggLocation
+    aHellEgg()
+else
+    getgenv().aHellEgg = false;
+end
+end)
+
+EggsSection:NewToggle("Auto Hell Egg x3", "Auto opens the Hell egg x3 for you", function(state)
+getgenv().aHellEgg3 = true;
+if state then
+    local HellEggLocation = CFrame.new(83, 5471, -854)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = HellEggLocation
+    aHellEgg3()
+else
+    getgenv().aHellEgg3 = false;
+end
+end)
+
+
+
+EggsSection:NewToggle("Auto Tech Egg", "Auto opens the Tech egg for you", function(state)
+getgenv().aTechEgg = true;
+if state then
+    local TechEggLocation = CFrame.new(104, 6040, -847)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = TechEggLocation
+    aTechEgg()
+else
+   getgenv().aTechEgg = false;
+end
+end)
+
+EggsSection:NewToggle("Auto Tech Egg x3", "Auto opens the Tech egg x3 for you", function(state)
+getgenv().aTechEgg3 = true;
+if state then
+    local TechEggLocation = CFrame.new(104, 6040, -847)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = TechEggLocation
+    aTechEgg3()
+else
+   getgenv().aTechEgg3 = false;
+end
+end)
+
+
+    
+EggsSection:NewToggle("Auto Steampunk Egg", "Auto opens the Steampunk egg for you", function(state)
+getgenv().aSteampunkEgg = true;
+if state then
+    local SteampunkEggLocation = CFrame.new(-63, 157, -833)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = SteampunkEggLocation
+    aSteampunkEgg()
+else
+    getgenv().aSteampunkEgg = false;
+end
+end)
+
+EggsSection:NewToggle("Auto Steampunk Egg x3", "Auto opens the Steampunk egg x3 for you", function(state)
+getgenv().aSteampunkEgg3 = true;
+if state then
+    local SteampunkEggLocation = CFrame.new(-63, 157, -833)
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    wait(0.1)
+    EpicPlayerMan.CFrame = SteampunkEggLocation
+    aSteampunkEgg3()
+else
+    getgenv().aSteampunkEgg3 = false;
+end
+end)
+
+
+
+
+-- Functions
+
+function aBasicEgg()
+spawn(function()
+    while getgenv().aBasicEgg == true do
+        local args = {
+            [1] = "Basic Egg",
+            [2] = 1
+            }
+            game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+function aRareEgg()
+spawn(function()
+    while getgenv().aRareEgg == true do
+        local args = {
+            [1] = "Rare Egg",
+            [2] = 1
+            }
+            game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+function aForestEgg()
+spawn(function()
+    while getgenv().aForestEgg == true do
+        local args = {
+            [1] = "Forest Egg",
+            [2] = 1
+            }
+            game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+function aDesertEgg()
+spawn(function()
+    while getgenv().aDesertEgg == true do
+        local args = {
+            [1] = "Desert Egg",
+            [2] = 1
+            }
+            game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+function aWinterEgg()
+spawn(function()
+    while getgenv().aWinterEgg == true do
+        local args = {
+            [1] = "Winter Egg",
+            [2] = 1
+            }
+            game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+function aLavaEgg()
+spawn(function()
+    while getgenv().aLavaEgg == true do
+        local args = {
+            [1] = "Lava Egg",
+            [2] = 1
+            }
+            game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aAquaEgg()
+spawn(function()
+    while getgenv().aAquaEgg == true do
+        local args = {
+            [1] = "Aqua Egg",
+            [2] = 1
+            }
+            game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aSakuraEgg()
+spawn(function()
+    while getgenv().aSakuraEgg == true do
+        local args = {
+            [1] = "Sakura Egg",
+            [2] = 1
+            }
+            game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aMineEgg()
+spawn(function()
+    while getgenv().aMineEgg == true do
+        local args = {
+            [1] = "Mine Egg",
+            [2] = 1
+            }
+            game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aGalaxyEgg()
+spawn(function()
+    while getgenv().aGalaxyEgg == true do
+        local args = {
+            [1] = "Galaxy Egg",
+            [2] = 1
+            }
+            game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aHeavenEgg()
+spawn(function()
+    while getgenv().aHeavenEgg == true do
+        local args = {
+            [1] = "Heaven Egg",
+            [2] = 1
+            }
+            game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+function aHellEgg()
+spawn(function()
+    while getgenv().aHellEgg == true do
+        local args = {
+            [1] = "Hell Egg",
+            [2] = 1
+            }
+            game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+    
+    
+function aTechEgg()
+spawn(function()
+    while getgenv().aTechEgg == true do
+        local args = {
+            [1] = "Tech Egg",
+            [2] = 1
+            }
+            game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+function aSteampunkEgg()
+    spawn(function()
+        while getgenv().aSteampunkEgg == true do
+            local args = {
+                [1] = "Steampunk Egg",
+                [2] = 1
+                }
+                game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+            wait(0.2)
+        end
+    end)
+    end
+
+    function aBasicEgg3()
+        spawn(function()
+            while getgenv().aBasicEgg3 == true do
+                local args = {
+                    [1] = "Basic Egg",
+                    [2] = 3
+                    }
+                    game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+                wait(0.2)
+            end
+        end)
+        end
+        
+        function aRareEgg3()
+        spawn(function()
+            while getgenv().aRareEgg3 == true do
+                local args = {
+                    [1] = "Rare Egg3",
+                    [2] = 3
+                    }
+                    game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+                wait(0.2)
+            end
+        end)
+        end
+        
+        function aForestEgg3()
+        spawn(function()
+            while getgenv().aForestEgg3 == true do
+                local args = {
+                    [1] = "Forest Egg",
+                    [2] = 3
+                    }
+                    game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+                wait(0.2)
+            end
+        end)
+        end
+        
+        function aDesertEgg3()
+        spawn(function()
+            while getgenv().aDesertEgg3 == true do
+                local args = {
+                    [1] = "Desert Egg",
+                    [2] = 3
+                    }
+                    game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+                wait(0.2)
+            end
+        end)
+        end
+        
+        function aWinterEgg3()
+        spawn(function()
+            while getgenv().aWinterEgg3 == true do
+                local args = {
+                    [1] = "Winter Egg",
+                    [2] = 3
+                    }
+                    game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+                wait(0.2)
+            end
+        end)
+        end
+        
+        function aLavaEgg3()
+        spawn(function()
+            while getgenv().aLavaEgg3 == true do
+                local args = {
+                    [1] = "Lava Egg",
+                    [2] = 3
+                    }
+                    game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+                wait(0.2)
+            end
+        end)
+        end
+        
+        
+        function aAquaEgg3()
+        spawn(function()
+            while getgenv().aAquaEgg3 == true do
+                local args = {
+                    [1] = "Aqua Egg",
+                    [2] = 3
+                    }
+                    game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+                wait(0.2)
+            end
+        end)
+        end
+        
+        
+        function aSakuraEgg3()
+        spawn(function()
+            while getgenv().aSakuraEgg3 == true do
+                local args = {
+                    [1] = "Sakura Egg",
+                    [2] = 3
+                    }
+                    game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+                wait(0.2)
+            end
+        end)
+        end
+        
+        
+        function aMineEgg3()
+        spawn(function()
+            while getgenv().aMineEgg3 == true do
+                local args = {
+                    [1] = "Mine Egg",
+                    [2] = 3
+                    }
+                    game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+                wait(0.2)
+            end
+        end)
+        end
+        
+        
+        function aGalaxyEgg3()
+        spawn(function()
+            while getgenv().aGalaxyEgg3 == true do
+                local args = {
+                    [1] = "Galaxy Egg",
+                    [2] = 3
+                    }
+                    game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+                wait(0.2)
+            end
+        end)
+        end
+        
+        
+        function aHeavenEgg3()
+        spawn(function()
+            while getgenv().aHeavenEgg3 == true do
+                local args = {
+                    [1] = "Heaven Egg",
+                    [2] = 3
+                    }
+                    game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+                wait(0.2)
+            end
+        end)
+        end
+        
+        function aHellEgg3()
+        spawn(function()
+            while getgenv().aHellEgg3 == true do
+                local args = {
+                    [1] = "Hell Egg",
+                    [2] = 3
+                    }
+                    game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+                wait(0.2)
+            end
+        end)
+        end
+            
+            
+        function aTechEgg3()
+        spawn(function()
+            while getgenv().aTechEgg3 == true do
+                local args = {
+                    [1] = "Tech Egg",
+                    [2] = 3
+                    }
+                    game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+                wait(0.2)
+            end
+        end)
+        end
+        
+        function aSteampunkEgg3()
+            spawn(function()
+                while getgenv().aSteampunkEgg3 == true do
+                    local args = {
+                        [1] = "Steampunk Egg",
+                        [2] = 3
+                        }
+                        game:GetService("ReplicatedStorage").Remotes.BuyEgg:InvokeServer(unpack(args))
+                    wait(0.2)
+                end
+            end)
+            end
+
+
+function aRebirth1()
+spawn(function()
+    while getgenv().aRebirth1 == true do
+        local args = {
+        [1] = 1
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth5()
+spawn(function()
+    while getgenv().aRebirth5 == true do
+        local args = {
+        [1] = 2
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth20()
+spawn(function()
+    while getgenv().aRebirth20 == true do
+        local args = {
+        [1] = 3
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth80()
+spawn(function()
+    while getgenv().aRebirth80 == true do
+        local args = {
+        [1] = 4
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth400()
+spawn(function()
+    while getgenv().aRebirth400 == true do
+        local args = {
+        [1] = 5
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+function aRebirth2k()
+spawn(function()
+    while getgenv().aRebirth2k == true do
+        local args = {
+        [1] = 6
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth10k()
+spawn(function()
+    while getgenv().aRebirth10k == true do
+        local args = {
+        [1] = 7
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth40k()
+spawn(function()
+    while getgenv().aRebirth40k == true do
+        local args = {
+        [1] = 8
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth100k()
+spawn(function()
+    while getgenv().aRebirth100k == true do
+        local args = {
+        [1] = 9
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth400k()
+spawn(function()
+    while getgenv().aRebirth400k == true do
+        local args = {
+        [1] = 10
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth2M()
+spawn(function()
+    while getgenv().aRebirth2M == true do
+        local args = {
+        [1] = 11
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+function aRebirth10M()
+spawn(function()
+    while getgenv().aRebirth10M == true do
+        local args = {
+        [1] = 12
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth40M()
+spawn(function()
+    while getgenv().aRebirth40M == true do
+        local args = {
+        [1] = 13
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth100M()
+spawn(function()
+    while getgenv().aRebirth100M == true do
+        local args = {
+        [1] = 14
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth500M()
+spawn(function()
+    while getgenv().aRebirth500M == true do
+        local args = {
+        [1] = 15
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth2B()
+spawn(function()
+    while getgenv().aRebirth2B == true do
+        local args = {
+        [1] = 16
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth10B()
+spawn(function()
+    while getgenv().aRebirth10B == true do
+        local args = {
+        [1] = 17
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth40B()
+spawn(function()
+    while getgenv().aRebirth40B == true do
+        local args = {
+        [1] = 18
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth200B()
+spawn(function()
+    while getgenv().aRebirth200B == true do
+        local args = {
+        [1] = 19
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth1T()
+spawn(function()
+    while getgenv().aRebirth1T == true do
+        local args = {
+        [1] = 20
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth2T()
+spawn(function()
+    while getgenv().aRebirth2T == true do
+        local args = {
+        [1] = 21
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+function aRebirth10T()
+spawn(function()
+    while getgenv().aRebirth10T == true do
+        local args = {
+        [1] = 22
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth40T()
+spawn(function()
+    while getgenv().aRebirth40T == true do
+        local args = {
+        [1] = 23
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth100T()
+spawn(function()
+    while getgenv().aRebirth100T == true do
+        local args = {
+        [1] = 24
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth500T()
+spawn(function()
+    while getgenv().aRebirth500T == true do
+        local args = {
+        [1] = 25
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth2Qd()
+spawn(function()
+    while getgenv().aRebirth2Qd == true do
+        local args = {
+        [1] = 26
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth10Qd()
+spawn(function()
+    while getgenv().aRebirth10Qd == true do
+        local args = {
+        [1] = 27
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth100Qd()
+spawn(function()
+    while getgenv().aRebirth100Qd == true do
+        local args = {
+        [1] = 28
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth500Qd()
+spawn(function()
+    while getgenv().aRebirth500Qd == true do
+        local args = {
+        [1] = 29
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth2Qn()
+spawn(function()
+    while getgenv().aRebirth2Qn == true do
+        local args = {
+        [1] = 30
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+function aRebirth10Qn()
+spawn(function()
+    while getgenv().aRebirth10Qn == true do
+        local args = {
+        [1] = 31
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth40Qn()
+spawn(function()
+    while getgenv().aRebirth40Qn == true do
+        local args = {
+        [1] = 32
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth200Qn()
+spawn(function()
+    while getgenv().aRebirth200Qn == true do
+        local args = {
+        [1] = 33
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth1Sx()
+spawn(function()
+    while getgenv().aRebirth1Sx == true do
+        local args = {
+        [1] = 34
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+function aRebirth5Sx()
+spawn(function()
+    while getgenv().aRebirth5Sx == true do
+        local args = {
+        [1] = 35
+        }
+        game:GetService("ReplicatedStorage").Remotes.Rebirth:FireServer(unpack(args))
+        wait(0.2)
+    end
+end)
+end
+
+
+
+
+
+
+
+function aTap()
+spawn(function()
+while getgenv().autoTap == true do
+    game:GetService("ReplicatedStorage").Remotes.Tap:FireServer()
+    wait(0.2)
+    end
+end)
+end
+
+
+end
+
+
+local CustomTab = Window:NewTab("Customize")
+local KeybindsSection = CustomTab:NewSection("Keybinds")
+local ColorSection = CustomTab:NewSection("Color (Unavailable)")
+
+
+KeybindsSection:NewKeybind("Toggle UI", "Pressing the keybind toggles the UI", Enum.KeyCode.LeftControl, function()
+	Library:ToggleUI()
+end)
