@@ -1,3 +1,61 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local colors = {
+    SchemeColor = Color3.fromRGB(102, 0, 0),
+    Background = Color3.fromRGB(10, 10, 10),
+    Header = Color3.fromRGB(5, 5, 5),
+    TextColor = Color3.fromRGB(255,255,255),
+    ElementColor = Color3.fromRGB(20, 20, 20)
+}
+local Window = Library.CreateLib("UwU Scripts", colors)
+local Version = "0.0.2"
+
+local HomeTab = Window:NewTab("Info")
+local InfoSection = HomeTab:NewSection("Info")
+local CreditsSection = HomeTab:NewSection("Credits")
+
+InfoSection:NewLabel("Welcome, " .. game.Players.LocalPlayer.Name .. " to UwU Scripts.")
+InfoSection:NewLabel("The Script version is " .. Version .. ".")
+InfoSection:NewLabel("Our Site: Unavailable")
+
+CreditsSection:NewLabel("Creator: UwU Scripts")
+CreditsSection:NewLabel("Hub UI: Kavo UI")
+
+local UniversalTab = Window:NewTab("Universal")
+local UniversalSection1 = UniversalTab:NewSection("Character")
+
+UniversalSection1:NewSlider("Speed", "Changes your walkspeed", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+UniversalSection1:NewSlider("Jump Power", "Changes your jump power", 500, 50, function(jp) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = jp
+end)
+
+UniversalSection1:NewToggle("Toggle Jump Power", "Toggles your jump power", function(state)
+if state then
+    game.Players.LocalPlayer.Character.Humanoid.UseJumpPower = true
+else
+    game.Players.LocalPlayer.Character.Humanoid.UseJumpPower = false
+end
+end)
+
+UniversalSection1:NewButton("Inf Jumps", "Enables Inf Jumps", function()
+    local InfiniteJumpEnabled = true
+game:GetService("UserInputService").JumpRequest:connect(function()
+	if InfiniteJumpEnabled then
+		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+	end
+end)
+end)
+
+UniversalSection1:NewSlider("Fov", "Changes player's fov", 120, 60, function(v) -- 500 (MaxValue) | 0 (MinValue)
+    game.Workspace.CurrentCamera.FieldOfView = v
+end)
+
+
+
+
+
 -- Example Ui
     if game.PlaceId == 9498006165 then
     InfoSection:NewLabel("You are playing Tapping Simulator by Zood Studios.")
@@ -421,3 +479,13 @@ end
 
 
 end
+
+
+local CustomTab = Window:NewTab("Customize")
+local KeybindsSection = CustomTab:NewSection("Keybinds")
+local ColorSection = CustomTab:NewSection("Color (Unavailable)")
+
+
+KeybindsSection:NewKeybind("Toggle UI", "Pressing the keybind toggles the UI", Enum.KeyCode.LeftControl, function()
+	Library:ToggleUI()
+end)
