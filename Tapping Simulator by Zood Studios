@@ -1,0 +1,423 @@
+-- Example Ui
+    if game.PlaceId == 9498006165 then
+    InfoSection:NewLabel("You are playing Tapping Simulator by Zood Studios.")
+
+
+-- Tab 1 (Clicks)
+local FarmTab = Window:NewTab("Autofarm")
+local FarmSection = FarmTab:NewSection("Autofarm")
+
+FarmSection:NewToggle("Auto Tap", "Taps for you", function(state)
+getgenv().autoTap = true;
+if state then
+    aTap()
+else
+    getgenv().autoTap = false;
+end
+end)
+
+
+
+
+
+
+
+-- Tab 2 (Rebirths)
+
+local RebirthTab = Window:NewTab("Rebirth")
+local RebirthSection = RebirthTab:NewSection("Rebirth")
+
+RebirthSection:NewToggle("Rebirth 1", "Rebirths for you by 1", function(state)
+getgenv().aRebirth1 = true;
+if state then
+    aRebirth1()
+else
+    getgenv().aRebirth1 = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 5", "Rebirths for you by 5", function(state)
+getgenv().aRebirth5 = true;
+if state then
+    aRebirth5()
+else
+    getgenv().aRebirth5 = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 10", "Rebirths for you by 10", function(state)
+getgenv().aRebirth10 = true;
+if state then
+    aRebirth10()
+else
+    getgenv().aRebirth10 = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 20", "Rebirths for you by 20", function(state)
+getgenv().aRebirth20 = true;
+if state then
+    aRebirth20()
+else
+    getgenv().aRebirth20 = false;
+end
+end)
+
+
+RebirthSection:NewToggle("Rebirth 100", "Rebirths for you by 100", function(state)
+getgenv().aRebirth100 = true;
+if state then
+    aRebirth100()
+else
+    getgenv().aRebirth100 = false;
+end
+end)
+
+-- Tab 3 (Eggs)
+
+local EggsTab = Window:NewTab("Auto Eggs")
+local EggsSection = EggsTab:NewSection("Eggs")
+
+EggsSection:NewToggle("Auto Starter Egg", "Auto opens the starter egg for you", function(state)
+getgenv().aStarterEgg = true;
+if state then
+    aStarterEgg()
+else
+    getgenv().aStarterEgg = false;
+end
+end)
+
+EggsSection:NewToggle("Auto Wood Egg", "Auto opens the Wood egg for you", function(state)
+getgenv().aWoodEgg = true;
+if state then
+    aWoodEgg()
+else
+    getgenv().aWoodEgg = false;
+end
+end)
+
+EggsSection:NewToggle("Auto Jungle Egg", "Auto opens the Jungle egg for you", function(state)
+getgenv().aJungleEgg = true;
+if state then
+    aJungleEgg()
+else
+    getgenv().aJungleEgg = false;
+end
+end)
+
+EggsSection:NewToggle("Auto Forest Egg", "Auto opens the Forest egg for you", function(state)
+getgenv().aForestEgg = true;
+if state then
+    aForestEgg()
+else
+    getgenv().aForestEgg = false;
+end
+end)
+
+EggsSection:NewToggle("Auto Bee Egg", "Auto opens the Bee egg for you", function(state)
+getgenv().aBeeEgg = true;
+if state then
+    aBeeEgg()
+else
+    getgenv().aBeeEgg = false;
+end
+end)
+
+EggsSection:NewToggle("Auto Swamp Egg", "Auto opens the Swamp egg for you", function(state)
+getgenv().aSwampEgg = true;
+if state then
+    aSwampEgg()
+else
+    getgenv().aSwampEgg = false;
+end
+end)
+
+EggsSection:NewToggle("Auto Snow Egg", "Auto opens the Snow egg for you", function(state)
+getgenv().aSnowEgg = true;
+if state then
+    aSnowEgg()
+else
+    getgenv().aSnowEgg = false;
+end
+end)
+
+EggsSection:NewToggle("Auto Desert Egg", "Auto opens the Desert egg for you", function(state)
+getgenv().aDesertEgg = true;
+if state then
+    aDesertEgg()
+else
+    getgenv().aDesertEgg = false;
+end
+end)
+
+EggsSection:NewToggle("Auto Death Egg", "Auto opens the Death egg for you", function(state)
+getgenv().aDeathEgg = true;
+if state then
+    aDeathEgg()
+else
+    getgenv().aDeathEgg = false;
+end
+end)
+
+EggsSection:NewToggle("Auto Desert Egg", "Auto opens the Desert egg for you", function(state)
+getgenv().aDesertEgg = true;
+if state then
+    aDesertEgg()
+else
+    getgenv().aDesertEgg = false;
+end
+end)
+
+EggsSection:NewToggle("Auto Dominus Egg", "Auto opens the Dominus egg for you", function(state)
+getgenv().aDominusEgg = true;
+if state then
+    aDominusEgg()
+else
+    getgenv().aDominusEgg = false;
+end
+end)
+
+
+-- Functions
+
+function aStarterEgg()
+spawn(function()
+    while getgenv().aStarterEgg == true do
+        local args = {
+            [1] = {},
+            [2] = "Starter",
+            [3] = 1
+        }
+        game:GetService("ReplicatedStorage").Events.HatchEgg:InvokeServer(unpack(args))
+        wait(1.0)
+    end
+end)
+end
+
+function aWoodEgg()
+spawn(function()
+    while getgenv().aWoodEgg == true do
+        local args = {
+            [1] = {},
+            [2] = "Wood Egg",
+            [3] = 1
+        }
+        game:GetService("ReplicatedStorage").Events.HatchEgg:InvokeServer(unpack(args))
+        wait(1.0)
+    end
+end)
+end
+
+function aJungleEgg()
+spawn(function()
+    while getgenv().aJungleEgg == true do
+        local args = {
+            [1] = {},
+            [2] = "Jungle Egg",
+            [3] = 1
+        }
+        game:GetService("ReplicatedStorage").Events.HatchEgg:InvokeServer(unpack(args))
+        wait(1.0)
+    end
+end)
+end
+
+function aForestEgg()
+spawn(function()
+    while getgenv().aForestEgg == true do
+        local args = {
+            [1] = {},
+            [2] = "Forest Egg",
+            [3] = 1
+        }
+        game:GetService("ReplicatedStorage").Events.HatchEgg:InvokeServer(unpack(args))
+        wait(1.0)
+    end
+end)
+end
+
+function aBeeEgg()
+spawn(function()
+    while getgenv().aBeeEgg == true do
+        local args = {
+            [1] = {},
+            [2] = "Bee Egg",
+            [3] = 1
+        }
+        game:GetService("ReplicatedStorage").Events.HatchEgg:InvokeServer(unpack(args))
+        wait(1.0)
+    end
+end)
+end
+
+function aSwampEgg()
+spawn(function()
+    while getgenv().aSwampEgg == true do
+        local args = {
+            [1] = {},
+            [2] = "Swamp Egg",
+            [3] = 1
+        }
+        game:GetService("ReplicatedStorage").Events.HatchEgg:InvokeServer(unpack(args))
+        wait(1.0)
+    end
+end)
+end
+
+
+function aSnowEgg()
+spawn(function()
+    while getgenv().aSnowEgg == true do
+        local args = {
+            [1] = {},
+            [2] = "Snow Egg",
+            [3] = 1
+        }
+        game:GetService("ReplicatedStorage").Events.HatchEgg:InvokeServer(unpack(args))
+        wait(1.0)
+    end
+end)
+end
+
+
+function aDesertEgg()
+spawn(function()
+    while getgenv().aDesertEgg == true do
+        local args = {
+            [1] = {},
+            [2] = "Desert Egg",
+            [3] = 1
+        }
+        game:GetService("ReplicatedStorage").Events.HatchEgg:InvokeServer(unpack(args))
+        wait(1.0)
+    end
+end)
+end
+
+
+function aDeathEgg()
+spawn(function()
+    while getgenv().aDeathEgg == true do
+        local args = {
+            [1] = {},
+            [2] = "Death Egg",
+            [3] = 1
+        }
+        game:GetService("ReplicatedStorage").Events.HatchEgg:InvokeServer(unpack(args))
+        wait(1.0)
+    end
+end)
+end
+
+
+function aBeachEgg()
+spawn(function()
+    while getgenv().aBeachEgg == true do
+        local args = {
+            [1] = {},
+            [2] = "Beach Egg",
+            [3] = 1
+        }
+        game:GetService("ReplicatedStorage").Events.HatchEgg:InvokeServer(unpack(args))
+        wait(1.0)
+    end
+end)
+end
+
+
+function aDominusEgg()
+spawn(function()
+    while getgenv().aDominusEgg == true do
+        local args = {
+            [1] = {},
+            [2] = "Dominus Egg",
+            [3] = 1
+        }
+        game:GetService("ReplicatedStorage").Events.HatchEgg:InvokeServer(unpack(args))
+        wait(1.0)
+    end
+end)
+end
+
+
+
+
+function aRebirth1()
+spawn(function()
+    while getgenv().aRebirth1 == true do
+        local args = {
+        [1] = 1
+        }
+        game:GetService("ReplicatedStorage").Events.Rebirth:FireServer(unpack(args))
+        wait(1.0)
+    end
+end)
+end
+
+
+function aRebirth5()
+spawn(function()
+    while getgenv().aRebirth5 == true do
+        local args = {
+        [1] = 5
+        }
+        game:GetService("ReplicatedStorage").Events.Rebirth:FireServer(unpack(args))
+        wait(1.0)
+    end
+end)
+end
+
+
+function aRebirth10()
+spawn(function()
+    while getgenv().aRebirth10 == true do
+        local args = {
+        [1] = 10
+        }
+        game:GetService("ReplicatedStorage").Events.Rebirth:FireServer(unpack(args))
+        wait(1.0)
+    end
+end)
+end
+
+
+function aRebirth20()
+spawn(function()
+    while getgenv().aRebirth20 == true do
+        local args = {
+        [1] = 20
+        }
+        game:GetService("ReplicatedStorage").Events.Rebirth:FireServer(unpack(args))
+        wait(1.0)
+    end
+end)
+end
+
+
+function aRebirth100()
+spawn(function()
+    while getgenv().aRebirth100 == true do
+        local args = {
+        [1] = 100
+        }
+        game:GetService("ReplicatedStorage").Events.Rebirth:FireServer(unpack(args))
+        wait(1.0)
+    end
+end)
+end
+
+
+
+function aTap()
+spawn(function()
+while getgenv().autoTap == true do
+    game:GetService("ReplicatedStorage").Events.Tap:InvokeServer()
+    end
+end)
+end
+
+
+end
