@@ -5,6 +5,8 @@ if game.GameId == 9498006165 then
     elseif game.GameId == 0 then
         LoadScript('')
     else
-        task.wait(1)
+    
+    DiscordInviter("NZpS6ugu8X")
+    task.wait(1)
     game.Players.LocalPlayer:Kick("Invalid Game")
 end
