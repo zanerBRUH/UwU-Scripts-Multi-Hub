@@ -3,7 +3,7 @@ if game.GameId == 9498006165 then
     elseif game.GameId == 8750997647 then
         LoadScript('https://raw.githubusercontent.com/zanerBRUH/UwU-Scripts-Multi-Hub/main/Tapping%20Legends%20X%20by%20Shiny%20Star%20Games')
     elseif game.GameId == 8540346411 then
-        LoadScript('https://raw.githubusercontent.com/zanerBRUH/UwU-Scripts-Multi-Hub/main/Tapping%20Legends%20X%20by%20Shiny%20Star%20Games')
+        LoadScript('https://raw.githubusercontent.com/zanerBRUH/UwU-Scripts-Multi-Hub/main/Rebirth%20Champions%20X%20by%20Powerful%20Studio')
     elseif game.GameId == 0 then
         LoadScript('')
     else
