@@ -2,6 +2,8 @@ if game.GameId == 9498006165 then
         LoadScript('https://raw.githubusercontent.com/zanerBRUH/UwU-Scripts-Multi-Hub/main/Tapping%20Simulator%20by%20Zood%20Studios')
     elseif game.GameId == 8750997647 then
         LoadScript('https://raw.githubusercontent.com/zanerBRUH/UwU-Scripts-Multi-Hub/main/Tapping%20Legends%20X%20by%20Shiny%20Star%20Games')
+    elseif game.GameId == 8540346411 then
+        LoadScript('https://raw.githubusercontent.com/zanerBRUH/UwU-Scripts-Multi-Hub/main/Tapping%20Legends%20X%20by%20Shiny%20Star%20Games')
     elseif game.GameId == 0 then
         LoadScript('')
     else
