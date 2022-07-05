@@ -64,7 +64,8 @@ end)
 local ShopTab = Window:NewTab("Shop")
 local Randomsection = ShopTab:NewSection("Random")
 local PotionSection = ShopTab:NewSection("Potions")
-local UpgradeSection = ShopTab:NewSection("Upgrades")
+local UpgradeSection = ShopTab:NewSection("Spawn Upgrades")
+local Upgrade2Section = ShopTab:NewSection("Space Upgrades")
 local FarmTab = Window:NewTab("Autofarm")
 local FarmSection = FarmTab:NewSection("Autofarm")
 local RebirthTab = Window:NewTab("Rebirth")
@@ -833,6 +834,15 @@ function chestHell()
 end
 
 
+function chestSpace()
+    local args = {
+        [1] = "Space"
+    }
+    
+    game:GetService("ReplicatedStorage").Events.Chest:FireServer(unpack(args))
+end
+
+
 function chestSummer()
     local args = {
         [1] = "Summer"
@@ -1376,7 +1386,7 @@ end)
 
 
 
---((Upgrade Page))--
+--((Spawn Upgrade Page))--
 UpgradeSection:NewButton("Free Auto Clicker", "Purchases your free auto clicker", function()
     local args = {
         [1] = "FreeAutoClicker"
@@ -1468,7 +1478,96 @@ end)
 
 
 
+--((Space Upgrade Page))--
 
+Upgrade2Section:NewButton("Click Multiplier", "Upgrades Click Multiplier in SPACE shop", function()
+    local args = {
+        [1] = "ClickMultiplier",
+        [2] = "space"
+    }
+    
+    game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+end)
+
+
+Upgrade2Section:NewButton("Luck Multiplier", "Upgrades Luck Multiplier in SPACE shop", function()
+    local args = {
+        [1] = "ChestCountdown",
+        [2] = "space"
+    }
+    
+    game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+end)
+
+
+Upgrade2Section:NewButton("Bank Slots", "Upgrades your bank slots in SPACE shop", function()
+    local args = {
+        [1] = "BankSlot",
+        [2] = "space"
+    }
+    
+    game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+end)
+
+
+Upgrade2Section:NewButton("Max Luck Combo", "Upgrades your Max Luck Combo in SPACE shop", function()
+    local args = {
+        [1] = "MaxCombo",
+        [2] = "space"
+    }
+    
+    game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+end)
+
+
+Upgrade2Section:NewButton("Pet Equip", "Upgrades how many pets you can equip in SPACE shop", function()
+    local args = {
+        [1] = "PetEquip",
+        [2] = "space"
+    }
+    
+    game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+end)
+
+
+Upgrade2Section:NewButton("Luck Multiplier", "Upgrades your Luck Multiplier in SPACE shop", function()
+    local args = {
+        [1] = "LuckMultiplier",
+        [2] = "space"
+    }
+    
+    game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+end)
+
+
+Upgrade2Section:NewButton("Unlock teleport", "Unlocks teleport in SPACE shop", function()
+    local args = {
+        [1] = "Teleport",
+        [2] = "space"
+    }
+    
+    game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+end)
+
+
+Upgrade2Section:NewButton("Golden Pets Chance", "Upgrades Golden Pet Chance in SPACE shop", function()
+    local args = {
+        [1] = "GoldenChance",
+        [2] = "space"
+    }
+    
+    game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+end)
+
+
+Upgrade2Section:NewButton("Toxic Pets Chance", "Upgrades Toxic Pet Chance in SPACE shop", function()
+    local args = {
+        [1] = "ToxicChance",
+        [2] = "space"
+    }
+    
+    game:GetService("ReplicatedStorage").Functions.Upgrade:InvokeServer(unpack(args))
+end)
 
 
 
@@ -2051,7 +2150,7 @@ local selectedEgg;
 local location
 local Basic = -55, 157, -797
 
-EggsSection:NewDropdown("Auto Open Egg", "Select the egg you want to open", {"Basic", "Mythic", "Forest", "Beach", "Atlantis", "Desert", "Winter", "Volcano", "Moon", "Cyber", "Magic", "Heaven", "Nuclear", "Void", "Spooky", "Cave", "Steampunk", "Hell", "Surf", "Coco" }, function(value)
+EggsSection:NewDropdown("Auto Open Egg", "Select the egg you want to open", {"Basic", "Mythic", "Forest", "Beach", "Atlantis", "Desert", "Winter", "Volcano", "Moon", "Cyber", "Magic", "Heaven", "Nuclear", "Void", "Spooky", "Cave", "Steampunk", "Hell", "Surf", "Coco", "Kraken" }, function(value)
     selectedEgg = value
     print('Egg selected is: ', value)
 end)
@@ -2183,7 +2282,7 @@ end)
 
 
 TeleportSection:NewButton("Space World", "Teleports you to the Space World", function()
-    SpaceIslandTeleport()
+    SpaceWorldIslandTeleport()
     print('Teleported to Space World')
 end)
 
@@ -2210,10 +2309,6 @@ TeleportSection:NewButton("Summer Event Island", "Teleports you to the Summer Ev
     SummerEventIslandTeleport()
     print('Teleported to the Summer Event Island')
 end)
-
-
-
-
 
 
 
